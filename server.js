@@ -25,7 +25,7 @@ app.get("/api/hello", function (req, res) {
 });
 
 app.get('/api/timestamp/:date?', function(request, response){
-  let date_request = request.params.date;
+  let date_request = request.params.date || new Date().getTime();
   if(!isNaN(date_request)){ //simple check for number
     date_request = Number(date_request);
   }
